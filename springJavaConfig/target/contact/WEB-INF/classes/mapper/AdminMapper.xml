@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper元素中的namespace所对应的是一个接口的全限定名，这样MyBatis就可以通过它找到对应的接口-->
+<mapper namespace="com.wbg.springJavaConfig.dao.AdminDao">
+    <select id="listAll" resultType="com.wbg.springJavaConfig.entity.Admin">
+        select * from Admin
+    </select>
+    <!--
+    select元素表明这是一条查询语句
+    d标识这条SQL
+    parameterType说明要传递给SQL一个int类型的参数
+    resultType表明返回类型
+    -->
+    <select id="getById" parameterType="int" resultType="com.wbg.springJavaConfig.entity.Admin">
+        select * from Admin where a_id=#{aId}
+    </select>
+</mapper>
